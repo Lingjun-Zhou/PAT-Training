@@ -1,4 +1,4 @@
-/*
+
 “答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。
 得到“答案正确”的条件是：
 1. 字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；
@@ -27,8 +27,9 @@ NO
 NO
 NO
 NO
-*/
 
+//有题意可得出满足条件的字符串为：A*PA+TA*，其中P之前的A的个数*P和T之间A的个数=T之后A的个数
+//了解Scanner的用法，简单低效
 import java.util.Scanner;
 public class pat_1003 {
 	public static void main(String args[]) {

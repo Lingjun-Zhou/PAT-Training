@@ -35,12 +35,14 @@ Not Exist
 #include<cmath>
 #include<map>
 using namespace std;
+//一个二维数组，用于存储周围点相对于当前点的坐标偏差
 int circle[8][2] = { { -1,-1 },{ 0,-1 },{ 1,-1 },{ 1,0 },{ 1,1 },{ 0,1 },{ -1,1 },{ -1,0 } };
 int col, row, tol;
 vector<vector<int>>matrix;
 
 bool judge(int x, int y) {
 	int jacent_x, jacent_y;
+	//对于每个点的周围8个点都进行检查
 	for (int i = 0; i < 8; i++) {
 		jacent_x = x + circle[i][0];
 		jacent_y = y + circle[i][1];

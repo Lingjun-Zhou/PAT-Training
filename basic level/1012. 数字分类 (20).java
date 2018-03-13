@@ -19,7 +19,15 @@
 // N 11 2 N 9
 
 scanner分割字符串，split（“\\s+”)
+格式化输出，scanner分割字符串，split（“\\s+”)
 格式化输出，DecimalFormat
+
+0：
+    比实际数字的位数多，不足的地方用0补上。
+    比实际数字的位数少：整数部分不改动，小数部分，四舍五入
+#：
+    比实际数字的位数多，不变。
+    比实际数字的位数少：整数部分不改动，小数部分，四舍五入
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

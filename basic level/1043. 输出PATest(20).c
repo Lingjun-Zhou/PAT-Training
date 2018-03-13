@@ -8,6 +8,11 @@ redlesPayBestPATTopTeePHPereatitAPPT
 输出样例：
 PATestPATestPTetPTePePee
 
+新思路：
+用一个字典数组mp[6]记录PATest这个单词中的六个字符，再用一个数组hashTable[6]记录每个字符出现的次数，并用count变量记录总共的个数。
+
+之后遍历hashTable数组，如果hashTable[i]!=0，则输出mp[i]，并且count-–，直到count==0则不再输出。
+
 #include<iostream>
 #include<algorithm>
 #include<string.h>

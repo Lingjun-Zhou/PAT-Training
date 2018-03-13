@@ -18,6 +18,9 @@
 // 输出样例2：
 // N 11 2 N 9
 
+scanner分割字符串，split（“\\s+”)
+格式化输出，DecimalFormat
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;

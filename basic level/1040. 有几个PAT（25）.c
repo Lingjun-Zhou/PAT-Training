@@ -8,7 +8,7 @@
 APPAPT
 输出样例：
 2
-
+(0.29)数学分析，numOfAT，numOfPAT，num，从后往前遍历
 #include<iostream>
 #include<string.h>
 using namespace std;

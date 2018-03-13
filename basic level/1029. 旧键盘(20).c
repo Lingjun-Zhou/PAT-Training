@@ -9,6 +9,10 @@ _hs_s_a_es
 输出样例：
 7TI
 
+(0.39)string的大小写转换，transform，::toupper
+还可以用散列优化，让符合题意相同的字符只输出一次
+用一个bool型数组HashTable[128]={false}（ASCII总共有128个）记录输出的情况
+
 #include<iostream>
 #include<string>
 #include<algorithm>

@@ -10,6 +10,9 @@
 输出样例：
 5
 */
+
+判断奇偶数的简便方法：if(1&n)-->奇数，否则偶数
+
 //编程语言：Java
 import java.util.Scanner;
 public class pat_1001 {

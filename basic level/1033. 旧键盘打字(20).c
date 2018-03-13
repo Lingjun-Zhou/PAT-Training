@@ -10,6 +10,8 @@
 输出样例：
 _hs_s_a_tst
 
+（0.22）memset，getchar()
+
 #include<iostream>
 #include<vector>
 #include<algorithm>

@@ -7,6 +7,12 @@
 // 123 456 8
 // 输出样例：
 // 1103
+（0.37）
+进制转换通法：
+将P进制的数X转换成Q进制的Z，需要两步：
+1. 将P进制的X转换成十进制的Y
+2. 将十进制的Y转换成Q进制的Z（除基取余法）
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

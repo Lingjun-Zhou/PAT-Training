@@ -20,6 +20,7 @@
 *****
 2
 //
+（0.36）数学找规律
 #include<iostream>
 #include<math.h>
 using namespace std;

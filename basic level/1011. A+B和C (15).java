@@ -15,6 +15,15 @@
 // Case #3: true
 // Case #4: false
 
+常见数据类型变量的scanf和printf格式
+						scanf					printf
+int					("%d",&n)			("%d",n)
+long long		("%lld",&n)		("lld",n)
+float				("%f",&fl)		("%f",fl)
+double(*)		("%lf",&db)		("%f",db)
+char				("%c",&c)			("%c",c)
+字符串				("%s",str)		("%s",str)
+(char数组)
 import java.util.Scanner;
 
 public class pat_1011 {

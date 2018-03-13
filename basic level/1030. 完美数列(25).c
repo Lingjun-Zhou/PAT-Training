@@ -9,7 +9,7 @@
 2 3 20 4 5 1 6 7 8 9
 输出样例：
 8
-
+(0.17)
 #include<iostream>
 using namespace std;
 

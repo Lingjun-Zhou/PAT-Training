@@ -13,6 +13,8 @@
 // 输出样例2：
 // 0
 
+BufferedReader进行数据读取, stringTokenizer进行分词
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

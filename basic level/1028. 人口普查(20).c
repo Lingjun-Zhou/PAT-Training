@@ -14,6 +14,8 @@ Steve 1967/11/20
 输出样例：
 3 Tom John
 
+（0.20）字符串比较strcmp和sort排序
+
 #include<iostream>
 #include<string.h>
 #include<vector>

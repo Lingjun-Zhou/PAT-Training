@@ -6,7 +6,7 @@
 // 1 2 3 4 5 6
 // 输出样例：
 // 5 6 1 2 3 4
-
+scanner接收输入，将输入放入一个string中，最有输出这个string
 import java.util.Scanner;
 
 public class pat_1008 {

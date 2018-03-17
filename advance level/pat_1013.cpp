@@ -1,9 +1,11 @@
+1013 Battle Over Cities (25)
+
 #include<iostream>
 #include<cstring>
 #include<vector>
 using namespace std;
 #define MAX_CITY 1000
-//图的遍历（isVisited数组标识），统计连通个数，DFS
+//鍥剧殑閬嶅巻锛坕sVisited鏁扮粍鏍囪瘑锛夛紝缁熻杩為�氫釜鏁帮紝DFS
 int graph[MAX_CITY][MAX_CITY];
 bool isVisited[MAX_CITY];
 int city_num, edge_num, check_num;

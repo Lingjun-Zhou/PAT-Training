@@ -1,5 +1,8 @@
-//×î¶ÌÂ·¾¶ÎÊÌâ£¬²ÉÓÃDijkstraËã·¨£¬¿ÉËã³öÈÎÒâÁ½µã¼äµÄ×î¶Ì¾àÀë
-//Éî¶ÈÓÅÏÈ±éÀú£¬»ØËİµÄ·½·¨ÕÒµ½×îÓÅ½â
+
+
+
+//æœ€çŸ­è·¯å¾„é—®é¢˜ï¼Œé‡‡ç”¨Dijkstraç®—æ³•ï¼Œå¯ç®—å‡ºä»»æ„ä¸¤ç‚¹é—´çš„æœ€çŸ­è·ç¦»
+//æ·±åº¦ä¼˜å…ˆéå†ï¼Œå›æº¯çš„æ–¹æ³•æ‰¾åˆ°æœ€ä¼˜è§£
 #include<algorithm>
 #include<iostream>
 #include<vector>
@@ -44,7 +47,7 @@ void dfs(int start_point, int end_point) {
 	}
 	temp_path.pop_back();
 	print_path(temp_path);
-	
+
 }
 
 int main() {
@@ -55,7 +58,7 @@ int main() {
 	for (int i = 0; i < vertex_num; i++) {
 		cin >> vertex_value[i];
 	}
-	
+
 	//-------------create a graph--------------------
 	int** map = new int*[vertex_num];
 	for (int i = 0; i < vertex_num; i++) {

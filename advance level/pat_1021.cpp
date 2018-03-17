@@ -1,3 +1,29 @@
+1021. Deepest Root (25)
+A graph which is connected and acyclic can be considered a tree. The height of the tree depends on the selected root. Now you are supposed to find the root that results in a highest tree. Such a root is called the deepest root.
+Input Specification:
+Each input file contains one test case. For each case, the first line contains a positive integer N (<=10000) which is the number of nodes, and hence the nodes are numbered from 1 to N. Then N-1 lines follow, each describes an edge by given the two adjacent nodes numbers.
+Output Specification:
+For each test case, print each of the deepest roots in a line. If such a root is not unique, print them in increasing order of their numbers. In case that the given graph is not a tree, print "Error: K components" where K is the number of connected components in the graph.
+Sample Input 1:
+5
+1 2
+1 3
+1 4
+2 5
+Sample Output 1:
+3
+4
+5
+Sample Input 2:
+5
+1 3
+1 4
+2 5
+3 4
+Sample Output 2:
+Error: 2 components
+
+//å›¾çš„éå†ï¼ŒDFSï¼Œè®¡ç®—è¿é€šåˆ†é‡çš„ä¸ªæ•°,å¹¶æŸ¥é›†
 #include<iostream>
 #include<vector>
 #include<math.h>
@@ -23,7 +49,7 @@ int findFather(int a) {
 	while (x != itsFather[x]) {
 		x = itsFather[x];
 	}
-	//½«µ±Ç°½Úµãµ½¸ù½ÚµãÖ®¼äµÄËùÓĞ½ÚµãµÄitsFather¶¼ÉèÖÃÎª¸ù½Úµã±àºÅ£¬¼õÉÙÖ®ºóµÄ²éÑ¯´ÎÊı
+	//å°†å½“å‰èŠ‚ç‚¹åˆ°æ ¹èŠ‚ç‚¹ä¹‹é—´çš„æ‰€æœ‰èŠ‚ç‚¹çš„itsFatheréƒ½è®¾ç½®ä¸ºæ ¹èŠ‚ç‚¹ç¼–å·ï¼Œå‡å°‘ä¹‹åçš„æŸ¥è¯¢æ¬¡æ•°
 	while (a != itsFather[a]) {
 		int z = a;
 		a = itsFather[a];
@@ -40,18 +66,18 @@ void Union(int a, int b) {
 	}
 }
 
-int dfs(int s) {//·µ»ØÒÔsÎªÆğµãËùÄÜµ½´ïµÄ×î´óÉî¶È
+int dfs(int s) {//è¿”å›ä»¥sä¸ºèµ·ç‚¹æ‰€èƒ½åˆ°è¾¾çš„æœ€å¤§æ·±åº¦
 	int ans = 0;
 	if (isVisited[s])return 0;
 	isVisited[s] = true;
 	int m = all_nodes[s].size();
 	for (int i = 0; i < m; i++) {
-		if (!isVisited[all_nodes[s][i]]) {//±È½Ïµ±Ç°µã³ö·¢µÄ¸÷ÁÚµãµÄ×î´óÉî¶È
+		if (!isVisited[all_nodes[s][i]]) {//æ¯”è¾ƒå½“å‰ç‚¹å‡ºå‘çš„å„é‚»ç‚¹çš„æœ€å¤§æ·±åº¦
 			int temp = dfs(all_nodes[s][i]);
 			ans = ans > temp ? ans : temp;
 		}
 	}
-	return ans + 1;//µ±Ç°µã+¸÷ÁÚµãÖĞµÄ×î´óÉî¶È£¬¾ÍÊÇµ±Ç°µã³ö·¢µÄ×î´óÉî¶È
+	return ans + 1;//å½“å‰ç‚¹+å„é‚»ç‚¹ä¸­çš„æœ€å¤§æ·±åº¦ï¼Œå°±æ˜¯å½“å‰ç‚¹å‡ºå‘çš„æœ€å¤§æ·±åº¦
 }
 
 int main() {
@@ -59,7 +85,7 @@ int main() {
 	cin >> n;
 	init(n);
 	for (int i = 1; i < n; i++) {
-		int a, b; 
+		int a, b;
 		cin >> a >> b;
 		Union(a, b);
 		all_nodes[a].push_back(b);
@@ -78,7 +104,7 @@ int main() {
 	}
 	else {
 		for (int i = 1; i <= n; i++) {
-			//Ò»´Î±éÀú¾Í½«ËùÓĞµã¶¼±éÀúÁË£¬ËùÒÔ¿ªÊ¼Ã¿´ÎĞÂµÄ±éÀúÇ°Ğè½«isVisitedÊı×éÖÃÁã
+			//ä¸€æ¬¡éå†å°±å°†æ‰€æœ‰ç‚¹éƒ½éå†äº†ï¼Œæ‰€ä»¥å¼€å§‹æ¯æ¬¡æ–°çš„éå†å‰éœ€å°†isVisitedæ•°ç»„ç½®é›¶
 			memset(isVisited, 0, sizeof(isVisited));
 			depth[i] = dfs(i);
 			if (depth[i] >= deepest)

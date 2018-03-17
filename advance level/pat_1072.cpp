@@ -5,9 +5,9 @@
 #include<map>
 #include<algorithm>
 #include<iomanip>
-//ÓĞ²âÊÔµãÎ´Í¨¹ı
-//µÚÒ»¸ö´ıÑ¡¼ÓÓÍÕ¾µÄ½Úµã±àºÅÎªn+1£¬nÎª×Ü¹²µÄ·¿ÎİÊı
-//Õâ¸öÍ¼µÄ×Ü½ÚµãÊıÎªn+m£¬mÎª×Ü¹²µÄ´ıÑ¡¼ÓÓÍÕ¾
+
+//ç¬¬ä¸€ä¸ªå¾…é€‰åŠ æ²¹ç«™çš„èŠ‚ç‚¹ç¼–å·ä¸ºn+1ï¼Œnä¸ºæ€»å…±çš„æˆ¿å±‹æ•°
+//è¿™ä¸ªå›¾çš„æ€»èŠ‚ç‚¹æ•°ä¸ºn+mï¼Œmä¸ºæ€»å…±çš„å¾…é€‰åŠ æ²¹ç«™
 using namespace std;
 #define MAX_NODE 1011
 #define INF 99999999
@@ -48,11 +48,11 @@ int get_node_id(string s) {
 
 
 int Dijkstra(int start_point) {
-	//³õÊ¼»¯½Úµã¾àÀë
+	//åˆå§‹åŒ–èŠ‚ç‚¹è·ç¦»
 	for (int i = 1; i <= nodes_num; i++)
 		dist[i] = graph[start_point][i];
 
-	//¼ÆËã²¢¸üĞÂdist[]
+	//è®¡ç®—å¹¶æ›´æ–°dist[]
 	for (int i = 1; i <= nodes_num; i++) {
 		int u = -1, minn = INF;
 		for (int j = 1; j <= nodes_num; j++) {
@@ -84,7 +84,7 @@ int main() {
 
 	cin >> house_num >> gas_num >> edge_num >> threshold;
 	nodes_num = house_num + gas_num;
-	//³õÊ¼»¯Í¼
+	//åˆå§‹åŒ–å›¾
 	for (int i = 1; i <= nodes_num; i++) {
 		for (int j = 1; j <= nodes_num; j++) {
 			if (i == j)graph[i][j] = 0;
@@ -101,11 +101,11 @@ int main() {
 		graph[id1][id2] = distance;
 		graph[id2][id1] = distance;
 	}
-	
+
 	string result;
 	double sum;
 	for (int i = 1; i <= gas_num;i++) {
-		
+
 		memset(isVisited, false, MAX_NODE);
 		memset(dist, INF, MAX_NODE);
 
@@ -133,9 +133,9 @@ int main() {
 		}
 		else;
 	}
-	
+
 	if (result.empty())
-		cout << "No Solution" << endl; 
+		cout << "No Solution" << endl;
 	else {
 		cout << result << endl;
 		cout << setiosflags(ios::fixed) << setprecision(1) << 1.0*min_distance << " " << sum*1.0 / house_num << endl;

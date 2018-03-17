@@ -1,15 +1,28 @@
+1020. Tree Traversals (25)
+Suppose that all the keys in a binary tree are distinct positive integers. Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of the corresponding binary tree.
+Input Specification:
+Each input file contains one test case. For each case, the first line gives a positive integer N (<=30), the total number of nodes in the binary tree. The second line gives the postorder sequence and the third line gives the inorder sequence. All the numbers in a line are separated by a space.
+Output Specification:
+For each test case, print in one line the level order traversal sequence of the corresponding binary tree. All the numbers in a line must be separated by exactly one space, and there must be no extra space at the end of the line.
+Sample Input:
+7
+2 3 1 5 7 6 4
+1 2 3 4 5 6 7
+Sample Output:
+4 1 6 3 5 7 2
+
 #include<iostream>
 #include<vector>
 #include<queue>
 using namespace std;
-//后序遍历，最后一个元素是整棵树的根，从后往前分别是右、左子树的根
+//鍚庡簭閬嶅巻锛屾渶鍚庝竴涓厓绱犳槸鏁存５鏍戠殑鏍癸紝浠庡悗寰�鍓嶅垎鍒槸鍙炽�佸乏瀛愭爲鐨勬牴
 typedef struct Node{
 	int value;
 	struct Node* left;
 	struct Node* right;
 }treeNode;
 #define MAX_N 30
-//通过后序和中序序列生成一棵树，再将其层次序列输出
+//閫氳繃鍚庡簭鍜屼腑搴忓簭鍒楃敓鎴愪竴妫垫爲锛屽啀灏嗗叾灞傛搴忓垪杈撳嚭
 vector<int> postOrder( MAX_N );
 vector<int> inOrder(MAX_N);
 treeNode* creatTree(int left, int right);
@@ -18,7 +31,7 @@ int cur,left,right;
 int nodes_num;
 int main() {
 	cin >> nodes_num;
-	for (int i = 0; i < nodes_num; i++) 
+	for (int i = 0; i < nodes_num; i++)
 		cin >> postOrder[i];
 	for (int i = 0; i < nodes_num; i++)
 		cin >> inOrder[i];
@@ -76,4 +89,3 @@ treeNode* creatTree(int left, int right) {
 	}
 	return  curNode;
 }
-

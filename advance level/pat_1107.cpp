@@ -1,3 +1,7 @@
+
+1107 Social Clusters (30)
+
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -42,7 +46,7 @@ int main() {
 	cin >> total_num;
 	int hobbies[MY_MAX] = { 0 };
 	init();
-	
+
 	for (int i = 1; i <= total_num; i++) {
 		int cur_num;
 		scanf_s("%d: ", &cur_num);
@@ -56,7 +60,7 @@ int main() {
 	}
 
 
-	//isRootÊý×é´æ´¢µÄÊÇÒÔiÎª¸ù½ÚµãµÄËùÓÐ½ÚµãÊýÁ¿
+	//isRootæ•°ç»„å­˜å‚¨çš„æ˜¯ä»¥iä¸ºæ ¹èŠ‚ç‚¹çš„æ‰€æœ‰èŠ‚ç‚¹æ•°é‡
 	for (int i = 1; i <= total_num; i++)
 		isRoot[findFather(i)]++;
 	int count = 0;
@@ -64,10 +68,10 @@ int main() {
 		if (isRoot[i] != 0)count++;
 	}
 	cout << count << endl;
-	
+
 	sort(isRoot, isRoot + MY_MAX, cmp);
 	//cout << isRoot[0] << endl;
 	for (int i = 0; i < count; i++)
 		i == 0 ? cout << isRoot[i] : cout << " " << isRoot[i];
-	
+
 }

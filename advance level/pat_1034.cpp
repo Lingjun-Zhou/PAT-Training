@@ -1,8 +1,12 @@
+1034. Head of a Gang (30)
+
+
+
 #include<iostream>
 #include<map>
 #include<string>
-//½Úµã²»ÊÇÊı×Ö±íÊ¾£¬¶à´ÎÓÃµ½map×ª»»
-//Á¬Í¨·ÖÖ§¼ÆËã·½·¨
+//èŠ‚ç‚¹ä¸æ˜¯æ•°å­—è¡¨ç¤ºï¼Œå¤šæ¬¡ç”¨åˆ°mapè½¬æ¢
+//è¿é€šåˆ†æ”¯è®¡ç®—æ–¹æ³•
 using namespace std;
 map<string, int>stringToInt;
 map<int, string>intToString;
@@ -12,7 +16,7 @@ int graph[2001][2001];
 int weight[2001];
 bool isVisited[2001];
 int stoiFunc(string s) {
-	//map¶ÔÓÚ²»´æÔÚµÄ¼üÖµ¶Ô£¬»á¸ù¾İ¸Ã¼üÖµ´´½¨Ò»¸ö£¬ÆävalueÎª¶ÔÓ¦ÀàĞÍµÄÄ¬ÈÏÖµ£¬ÕâÀïÊÇ0£»
+	//mapå¯¹äºä¸å­˜åœ¨çš„é”®å€¼å¯¹ï¼Œä¼šæ ¹æ®è¯¥é”®å€¼åˆ›å»ºä¸€ä¸ªï¼Œå…¶valueä¸ºå¯¹åº”ç±»å‹çš„é»˜è®¤å€¼ï¼Œè¿™é‡Œæ˜¯0ï¼›
 	if (stringToInt[s] == 0) {
 		stringToInt[s] = idNumber;
 		intToString[idNumber] = s;

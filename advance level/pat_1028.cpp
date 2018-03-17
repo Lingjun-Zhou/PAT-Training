@@ -1,9 +1,14 @@
+
+1028 List Sorting (25)
+
+
+
 #include<iostream>
 #include<string>
 #include<algorithm>
 #include<vector>
-//scanf，printf的效率比cin，cout要高
-//scanf不能处理string，要用cin
+//scanf锛宲rintf鐨勬晥鐜囨瘮cin锛宑out瑕侀珮
+//scanf涓嶈兘澶勭悊string锛岃鐢╟in
 using namespace std;
 struct Student {
 	int id;
